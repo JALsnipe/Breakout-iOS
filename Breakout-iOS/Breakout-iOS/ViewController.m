@@ -11,6 +11,11 @@
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UIView *ball;
 @property (weak, nonatomic) IBOutlet UIView *paddle;
+@property (weak, nonatomic) IBOutlet UIView *brick1;
+@property (weak, nonatomic) IBOutlet UIView *brick2;
+@property (weak, nonatomic) IBOutlet UIView *brick3;
+@property (weak, nonatomic) IBOutlet UIView *brick4;
+@property (weak, nonatomic) IBOutlet UIView *brick5;
 
 @end
 
@@ -29,7 +34,7 @@ UIDynamicItemBehavior *bounceBehaviour;
     _animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
     _gravity = [[UIGravityBehavior alloc] initWithItems:@[_ball]];
     [_animator addBehavior:_gravity];
-    _collision = [[UICollisionBehavior alloc] initWithItems:@[_ball]];
+    _collision = [[UICollisionBehavior alloc] initWithItems:@[_ball, _brick1, _brick2, _brick3, _brick4, _brick5]];
     _collision.translatesReferenceBoundsIntoBoundary = YES;
     [_animator addBehavior:_collision];
     
